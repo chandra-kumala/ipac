@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load static i18n wagtailcore_tags %}
+{% load static i18n wagtailcore_tags wagtailimages_tags %}
 
 {% block body_class %}template-facilitiespage{% endblock %}
 
@@ -20,6 +20,13 @@
             <p class="meta">{{ page.date }}</p>
 
             <div class="intro">{{ page.intro }}</div>
+
+            {% for item in page.gallery_images.all %}
+                <div style="display: inline; margin: 10px">
+                    {% image item.image fill-320x240 %}
+                    <p>{{ item.caption }}</p>
+                </div>
+            {% endfor %}
 
             {{ page.body|richtext }}
 
