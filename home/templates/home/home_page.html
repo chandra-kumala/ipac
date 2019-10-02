@@ -9,28 +9,13 @@
 <link rel="stylesheet" href="{% static 'css/welcome_page.css' %}">
 <script type="text/javascript" src="{% static 'js/paper-full.js' %}"></script>
 
-
 {% endblock extra_css %}
 
-<canvas id="myCanvas" resize></canvas>
 
 {% block content %}
 
-<header class="header" role="banner">
-    <div class="logo">
-      <a href="https://wagtail.io/">
-        <h3>PRESS ANY KEY</h1>
-      </a>
-    </div>
-    <div class="header-link">
-      {% comment %}
-        This works for all cases but prerelease versions:
-      {% endcomment %}
-      <a href="{% wagtail_documentation_path %}/releases/{% wagtail_release_notes_path %}">
-        {% trans "View the release notes" %}
-      </a>
-    </div>
-  </header>
+{% include 'home/_header.html' %}
+
   <main class="main">
 
     <div class="figure">
