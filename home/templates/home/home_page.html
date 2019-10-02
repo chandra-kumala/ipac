@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static wagtailcore_tags %}
+
 {% load static i18n wagtailcore_tags %}
 
 {% block body_class %}template-homepage{% endblock %}
@@ -32,18 +32,7 @@
     </div>
   </header>
   <main class="main">
-        <script type="text/paperscript" canvas="myCanvas">
-            // Create a Paper.js Path to draw a line into it:
-            var path = new Path();
-            // Give the stroke a color
-            path.strokeColor = 'black';
-            var start = new Point(100, 100);
-            // Move to start and draw a line from there
-            path.moveTo(start);
-            // Note the plus operator on Point objects.
-            // PaperScript does that for us, and much more!
-            path.lineTo(start + [ 100, -50 ]);
-        </script>
+
     <div class="figure">
       <img src="{% static "images/logo.svg" %}" alt="" class="figure-space">
       <!-- <svg class="figure-space" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" aria-hidden="true">
