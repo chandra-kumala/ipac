@@ -1,6 +1,7 @@
 # Project Ignore Files
 
 home/migrations/
+jobs/migrations/
 facilities/migrations/
 media/
 
