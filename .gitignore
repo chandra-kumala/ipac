@@ -1,6 +1,7 @@
 # Project Ignore Files
 
 home/migrations/
+facilities/migrations/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
