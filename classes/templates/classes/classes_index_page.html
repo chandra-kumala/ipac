@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% load static i18n wagtailcore_tags wagtailimages_tags %}
+
+{% block body_class %}template-classesindexpage{% endblock %}
+
+{% block extra_css %}
+
+<link rel="stylesheet" href="{% static 'css/welcome_page.css' %}">
+
+{% endblock extra_css %}
+
+{% block content %}
+
+    {% include 'home/_header.html' %}
+
+    <main class="main">
+
+        <h1>{{ page.title }}</h1>
+
+        <div class="intro">{{ page.intro|richtext }}</div>
+
+        {% for post in page.get_children %}
+        {% with post=post.specific %}
+            <h2><a href="{% pageurl post %}">{{ post.title }}</a></h2>
+            <p>{{ post.intro }}</p>
+            {{ post.body|richtext }}
+        {% endwith %}
+    {% endfor %}
+
+        <p><a href="{{ page.get_parent.url }}">Return to home page</a></p>
+    </main>
+
+    {% include 'home/_footer.html' %}
+
+{% endblock content %}
