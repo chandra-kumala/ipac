@@ -2,6 +2,7 @@
 
 home/migrations/
 jobs/migrations/
+classes/migrations/
 facilities/migrations/
 media/
 
