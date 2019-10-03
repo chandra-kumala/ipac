@@ -25,10 +25,15 @@
         <ellipse fill="#ddd" cx="150" cy="270" rx="40" ry="7"/>
       </svg> -->
     </div>
-    <div class="main-text">
-      <h1>{{ page.title|richtext }}</h1>
-      <p>{{ page.body|richtext }}</p>
+    <div class="main-text"></div>
+        <h1>{{ page.title|richtext }}</h1>
+        <article>
+                {% for block in page.body %}
+                    <section>{% include_block block %}</section>
+                {% endfor %}
+        </article>
     </div>
+
   </main>
 
 {% include 'home/_footer.html' %}
