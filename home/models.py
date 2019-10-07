@@ -7,8 +7,8 @@ from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel
 from wagtail.images.blocks import ImageChooserBlock
 
 class HomePage(Page):
-
     subpage_types = ['classes.ClassesIndexPage', 'jobs.JobsIndexPage', 'facilities.FacilitiesIndexPage']
+
     body = StreamField([
         ('heading', blocks.CharBlock(classname="full title")),
         ('paragraph', blocks.RichTextBlock()),
