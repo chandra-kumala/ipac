@@ -1,9 +1,12 @@
 # Project Ignore Files
 
-home/migrations/
-jobs/migrations/
-classes/migrations/
-facilities/migrations/
+
+*/migrations/__pycache__/
+*/migrations/0*
+#home/migrations/*
+#jobs/migrations/*
+#classes/migrations/*
+#facilities/migrations/*
 media/
 
 # Byte-compiled / optimized / DLL files
