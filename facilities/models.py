@@ -9,6 +9,7 @@ from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
 
 class FacilitiesIndexPage(Page):
+    subpage_types = ['facilities.FacilitiesPage']
     intro = RichTextField(blank=True)
 
     def get_context(self, request):

@@ -7,6 +7,7 @@ from wagtail.search import index
 
 
 class ClassesIndexPage(Page):
+    subpage_types = ['classes.ClassesPage']
     intro = RichTextField(blank=True)
 
     def get_context(self, request):
