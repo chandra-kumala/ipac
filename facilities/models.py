@@ -8,7 +8,7 @@ from wagtail.admin.edit_handlers import FieldPanel, InlinePanel
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
 
-class FacilitiesIndexPage(Page):
+class Facilities(Page):
     parent_page_types = ['home.HomePage']
     subpage_types = ['facilities.FacilitiesPage']
     intro = RichTextField(blank=True)
