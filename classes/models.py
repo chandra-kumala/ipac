@@ -24,6 +24,7 @@ class Classes(Page):
 
 
 class ClassesPage(Page):
+    parent_page_types = ['classes.classes']
     intro = models.CharField(max_length=250)
     body = RichTextField(blank=True)
 
