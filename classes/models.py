@@ -6,7 +6,7 @@ from wagtail.admin.edit_handlers import FieldPanel
 from wagtail.search import index
 
 
-class ClassesIndexPage(Page):
+class Classes(Page):
     subpage_types = ['classes.ClassesPage']
     intro = RichTextField(blank=True)
 
