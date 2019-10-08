@@ -1,4 +1,4 @@
-{% load i18n wagtailcore_tags %}
+{% load static i18n wagtailcore_tags %}
 
 <header class="header" role="banner">
     <div class="logo">
@@ -6,6 +6,12 @@
         <h3></h1>
       </a>
     </div>
+    <div class="header-link">
+        <a href="#">
+            <img src="{% static "images/logo.svg" %}" alt="" class="figure-space">
+        </a>
+    </div>
+
     <div class="header-link">
       {% comment %}
         This works for all cases but prerelease versions:
