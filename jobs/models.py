@@ -7,7 +7,7 @@ from wagtail.search import index
 
 import datetime
 
-class JobsIndexPage(Page):
+class Jobs(Page):
     parent_page_types = ['home.HomePage']
     subpage_types = ['jobs.JobsPage']
     intro = RichTextField(blank=True)
@@ -24,6 +24,7 @@ class JobsIndexPage(Page):
     ]
 
 class JobsPage(Page):
+    parent_page_types = ['jobs.jobs']
     date = models.DateField(("Post date"), default=datetime.date.today)
 
     intro = models.CharField(max_length=250)
