@@ -26,6 +26,7 @@ class FacilitiesIndexPage(Page):
 
 
 class FacilitiesPage(Page):
+    parent_page_types = ['facilities.Facilities']
     intro = models.CharField(max_length=250)
     body = RichTextField(blank=True)
 
