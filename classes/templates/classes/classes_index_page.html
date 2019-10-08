@@ -22,12 +22,14 @@
         <div class="intro">{{ page.intro|richtext }}</div>
 
         {% for post in classespages %}
-        {% with post=post.specific %}
-            <h2><a href="{% pageurl post %}">{{ post.title }}</a></h2>
-            <p>{{ post.intro }}</p>
-            {{ post.body|richtext }}
-        {% endwith %}
-    {% endfor %}
+            {% with post=post.specific %}
+                <article>
+                    <h2><a href="{% pageurl post %}">{{ post.title }}</a></h2>
+                    <p>{{ post.intro }}</p>
+                    {{ post.body|richtext }}
+                </article>
+            {% endwith %}
+        {% endfor %}
 
         <p><a href="{{ page.get_parent.url }}">Return to home page</a></p>
     </main>
