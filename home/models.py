@@ -8,6 +8,7 @@ from wagtail.images.blocks import ImageChooserBlock
 
 class HomePage(Page):
     subpage_types = ['classes.ClassesIndexPage', 'jobs.JobsIndexPage', 'facilities.FacilitiesIndexPage']
+    parent_page_types = ['wagtailcore.page']
 
     body = StreamField([
         ('heading', blocks.CharBlock(classname="full title")),

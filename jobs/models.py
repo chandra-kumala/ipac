@@ -8,6 +8,7 @@ from wagtail.search import index
 import datetime
 
 class JobsIndexPage(Page):
+    parent_page_types = ['home.HomePage']
     subpage_types = ['jobs.JobsPage']
     intro = RichTextField(blank=True)
 
