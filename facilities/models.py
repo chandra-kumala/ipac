@@ -16,8 +16,8 @@ class Facilities(Page):
     def get_context(self, request):
         # Update context to include only published posts, ordered by reverse-chron
         context = super().get_context(request)
-        facilitiespages = self.get_children().live().order_by('-first_published_at')
-        context['facilitiespages'] = facilitiespages
+        facilities = self.get_children().live().order_by('-first_published_at')
+        context['facilities'] = facilities
         return context
 
     content_panels = Page.content_panels + [
