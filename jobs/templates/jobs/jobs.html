@@ -22,7 +22,7 @@
         <div class="intro">{{ page.intro|richtext }}</div>
         <div class="intro">{{ page.start_date|richtext }}</div>
 
-        {% for post in jobspages %}
+        {% for post in jobs %}
             {% with post=post.specific %}
                 <h2><a href="{% pageurl post %}">{{ post.title }}</a></h2>
 
