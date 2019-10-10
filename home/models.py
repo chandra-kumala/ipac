@@ -37,6 +37,8 @@ class HomePage(Page):
 
     content_panels = Page.content_panels + [
         StreamFieldPanel('body'),
-    ]    class Meta:
+    ]
+
+    class Meta:
         verbose_name = "Home Page"
         verbose_name_plural = "Home Pages"
