@@ -1,12 +1,13 @@
 {% extends "base.html" %}
 
-{% load static i18n wagtailcore_tags %}
+{% load static i18n wagtailcore_tags wagtailimages_tags wagtailembeds_tags %}
 
 {% block body_class %}template-homepage{% endblock %}
 
 {% block extra_css %}
 
 <link rel="stylesheet" href="{% static 'css/home.css' %}">
+<link rel="stylesheet" href="{% static 'css/article.css' %}">
 <script type="text/javascript" src="{% static 'js/paper-full.js' %}"></script>
 
 {% endblock extra_css %}
@@ -21,9 +22,19 @@
     <div class="main-text"></div>
         <h1>{{ page.title|richtext }}</h1>
         <article>
-                {% for block in page.body %}
-                    <section>{% include_block block %}</section>
-                {% endfor %}
+            {% for block in page.body %}
+                <section>
+                    {% if block.block_type == 'heading' %}
+                        <h2 class="text-center">{{ block.value }}</h2>
+                    {% elif block.block_type == 'paragraph' %}
+                        <p class="text-center mb-0">{{ block.value }}</p>
+                    {% elif block.block_type == 'image' %}
+                        {% image block.value width-400 class="img-fluid" alt="Responsive image" %}
+                    {% elif block.block_type == 'embed' %}
+                        <div class="youtube mx-auto">{{ block.value }}</div>
+                    {% endif %}
+                </section>
+            {% endfor %}
         </article>
     </div>
 

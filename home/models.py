@@ -32,8 +32,11 @@ class HomePage(Page):
         ('heading', blocks.CharBlock(classname="full title")),
         ('paragraph', blocks.RichTextBlock()),
         ('image', ImageChooserBlock()),
+        ('embed', EmbedBlock()),
     ])
 
     content_panels = Page.content_panels + [
         StreamFieldPanel('body'),
-    ]
+    ]    class Meta:
+        verbose_name = "Home Page"
+        verbose_name_plural = "Home Pages"
