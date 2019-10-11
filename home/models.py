@@ -47,7 +47,7 @@ class HomePage(Page):
         StreamFieldPanel('body'),
     ]
     
-    content_panels = Page.promote_panels + [
+    promote_panels = Page.promote_panels + [
         FieldPanel('desc'),
         InlinePanel('desc_images', label="Social Image"),
     ]
