@@ -91,7 +91,11 @@ main {
 }
 
 section{
+    margin-left: auto;
+    margin-right: auto;
     padding: 10px;
+    max-width: 400px;
+    text-align: justify
 }
 
 .figure-space {
