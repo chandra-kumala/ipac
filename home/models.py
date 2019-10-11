@@ -44,9 +44,12 @@ class HomePage(Page):
     ])
 
     content_panels = Page.content_panels + [
+        StreamFieldPanel('body'),
+    ]
+    
+    content_panels = Page.promote_panels + [
         FieldPanel('desc'),
         InlinePanel('desc_images', label="Social Image"),
-        StreamFieldPanel('body'),
     ]
 
     class Meta:
