@@ -20,3 +20,35 @@
 .youtube{
     max-width: 400px;
 }
+
+/* Fix embedded formatting */
+
+main {
+    padding: 10px 0;
+    margin: 0 auto;
+    text-align: center;
+}
+
+section{
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    max-width: 400px;
+    text-align: justify;
+}
+
+/* Fix bulleted lists and paragraph spacing  */
+
+.rich-text ul {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10%;
+    width: 100%;
+    height: auto;
+    text-align: left;
+}
+
+.rich-text p {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
