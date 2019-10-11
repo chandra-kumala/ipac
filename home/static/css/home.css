@@ -84,10 +84,14 @@ svg:not(:root) {
     font-size: 14px;
 }
 
-.main {
-    padding: 40px 0;
+main {
+    padding: 10px 0;
     margin: 0 auto;
     text-align: center;
+}
+
+section{
+    padding: 10px;
 }
 
 .figure-space {
