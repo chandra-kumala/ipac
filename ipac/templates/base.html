@@ -18,9 +18,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <!-- Search engine stuff ... -->
         <title>{{ page.title }}</title>
-        <meta property="og:title" content="IPAC Music School" />
-        <meta name="description" content="Only full Orchestra in Medan, and Medans best music tuition!">
-        <meta property="og:description" content="Only full Orchestra in Medan, and Medans best music tuition!">
+        <meta property="og:title" content="{{ page.title }}" />
+        <meta name="description" content="{{ page.desc }}">
+        <meta property="og:description" content="{{ page.desc }}">
+        <!-- <meta name="description" content="Only full Orchestra in Medan, and Medans best music tuition!">
+        <meta property="og:description" content="Only full Orchestra in Medan, and Medans best music tuition!"> -->
         <meta property="og:image" content="{% static 'images/logo-square.png' %}">
         <meta property="og:url" content="https://www.ipacindo.com/" />
         <meta property="og:type" content="website" />
