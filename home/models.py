@@ -35,6 +35,7 @@ class HomePage(Page):
     parent_page_types = ['wagtailcore.page']
     subpage_types = ['classes.Classes', 'jobs.Jobs', 'facilities.Facilities', 'home.GenericPage']
 
+    desc = models.CharField("Description shown on Social Media", max_length=255, null=True, blank=True)
     body = StreamField([
         ('heading', blocks.CharBlock(classname="full title")),
         ('paragraph', blocks.RichTextBlock()),
@@ -47,6 +48,7 @@ class HomePage(Page):
     ]
     
     promote_panels = [
+        FieldPanel('desc'),
         MultiFieldPanel(Page.promote_panels, "Common page configuration"),
         InlinePanel('desc_images', label="Social Image"),
     ]
