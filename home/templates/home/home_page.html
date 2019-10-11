@@ -28,7 +28,7 @@
                     {% if block.block_type == 'heading' %}
                         <h2 class="text-center">{{ block.value }}</h2>
                     {% elif block.block_type == 'paragraph' %}
-                        <p class="text-center mb-4">{{ block.value }}</p>
+                        {{ block.value }}
                     {% elif block.block_type == 'image' %}
                         {% image block.value width-400 class="img-fluid" alt="Responsive image" %}
                     {% elif block.block_type == 'embed' %}
