@@ -6,7 +6,7 @@ from wagtail.core.models import Page, Orderable
 from wagtail.core.fields import StreamField
 from wagtail.embeds.blocks import EmbedBlock
 from wagtail.core import blocks
-from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel, InlinePanel
+from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel, InlinePanel, MultiFieldPanel
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.images.blocks import ImageChooserBlock
 
@@ -35,7 +35,6 @@ class HomePage(Page):
     parent_page_types = ['wagtailcore.page']
     subpage_types = ['classes.Classes', 'jobs.Jobs', 'facilities.Facilities', 'home.GenericPage']
 
-    desc = models.CharField("Description shown on Social Media", max_length=255, null=True, blank=True)
     body = StreamField([
         ('heading', blocks.CharBlock(classname="full title")),
         ('paragraph', blocks.RichTextBlock()),
@@ -47,8 +46,8 @@ class HomePage(Page):
         StreamFieldPanel('body'),
     ]
     
-    promote_panels = Page.promote_panels + [
-        FieldPanel('desc'),
+    promote_panels = [
+        MultiFieldPanel(Page.promote_panels, "Common page configuration"),
         InlinePanel('desc_images', label="Social Image"),
     ]
 
