@@ -25,7 +25,7 @@ a {
     text-decoration: underline;
 }
 
-a:hover {
+a:hover, .dropdown-item:hover {
     color: #ea1b10;
 }
 
