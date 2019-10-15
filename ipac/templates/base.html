@@ -19,10 +19,8 @@
         <!-- Search engine stuff ... -->
         <title>{{ page.title }}</title>
         <meta property="og:title" content="{{ page.seo_title }}" />
-        <meta name="description" content="1 - {{ page.search_description }}">
-        <meta property="og:description" content="2 - {{ page.search_description }}">
-        <!-- <meta name="description" content="Only full Orchestra in Medan, and Medans best music tuition!">
-        <meta property="og:description" content="Only full Orchestra in Medan, and Medans best music tuition!"> -->
+        <meta name="description" content="{{ page.search_description }}">
+        <meta property="og:description" content="{{ page.search_description }}">
         <meta property="og:image" content="{% static 'images/logo-square.png' %}">
         <meta property="og:url" content="https://www.ipacindo.com/" />
         <meta property="og:type" content="website" />
