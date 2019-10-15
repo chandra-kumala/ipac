@@ -5,8 +5,10 @@ from wagtail.core.fields import RichTextField
 from wagtail.admin.edit_handlers import FieldPanel
 from wagtail.search import index
 
+from ipac.models import Seo
 
-class Classes(Page):
+
+class Classes(Page, Seo):
     parent_page_types = ['home.HomePage']
     subpage_types = ['classes.ClassesPage']
     intro = RichTextField(blank=True)
@@ -21,9 +23,14 @@ class Classes(Page):
     content_panels = Page.content_panels + [
         FieldPanel('intro', classname="full")
     ]
+    
+    promote_panels = Page.promote_panels + [
+        MultiFieldPanel(Seo.panels, heading="Extra Seo Settings ..."),
+    ]
 
 
-class ClassesPage(Page):
+
+class ClassesPage(Page, Seo):
     parent_page_types = ['classes.Classes']
     intro = models.CharField(max_length=250)
     body = RichTextField(blank=True)
@@ -36,4 +43,8 @@ class ClassesPage(Page):
     content_panels = Page.content_panels + [
         FieldPanel('intro'),
         FieldPanel('body', classname="full"),
+    ]
+
+    promote_panels = Page.promote_panels + [
+        MultiFieldPanel(Seo.panels, heading="Extra Seo Settings ..."),
     ]

@@ -8,7 +8,9 @@ from wagtail.admin.edit_handlers import FieldPanel, InlinePanel
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
 
-class Facilities(Page):
+from ipac.models import Seo
+
+class Facilities(Page, Seo):
     parent_page_types = ['home.HomePage']
     subpage_types = ['facilities.FacilitiesPage']
     intro = RichTextField(blank=True)
@@ -24,8 +26,12 @@ class Facilities(Page):
         FieldPanel('intro', classname="full")
     ]
 
+    promote_panels = Page.promote_panels + [
+        MultiFieldPanel(Seo.panels, heading="Extra Seo Settings ..."),
+    ]
 
-class FacilitiesPage(Page):
+
+class FacilitiesPage(Page, Seo):
     parent_page_types = ['facilities.Facilities']
     intro = models.CharField(max_length=250)
     body = RichTextField(blank=True)
@@ -46,6 +52,10 @@ class FacilitiesPage(Page):
         FieldPanel('intro'),
         FieldPanel('body', classname="full"),
         InlinePanel('gallery_images', label="Gallery images"),
+    ]
+
+    promote_panels = Page.promote_panels + [
+        MultiFieldPanel(Seo.panels, heading="Extra Seo Settings ..."),
     ]
 
 class FacilitiesPageGalleryImage(Orderable):

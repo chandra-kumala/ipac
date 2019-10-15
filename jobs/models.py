@@ -5,9 +5,11 @@ from wagtail.core.fields import RichTextField
 from wagtail.admin.edit_handlers import FieldPanel
 from wagtail.search import index
 
+from ipac.models import Seo
+
 import datetime
 
-class Jobs(Page):
+class Jobs(Page, Seo):
     parent_page_types = ['home.HomePage']
     subpage_types = ['jobs.JobsPage']
     intro = RichTextField(blank=True)
@@ -23,7 +25,11 @@ class Jobs(Page):
         FieldPanel('intro', classname="full")
     ]
 
-class JobsPage(Page):
+    promote_panels = Page.promote_panels + [
+        MultiFieldPanel(Seo.panels, heading="Extra Seo Settings ..."),
+    ]
+
+class JobsPage(Page, Seo):
     parent_page_types = ['jobs.jobs']
     date = models.DateField(("Post date"), default=datetime.date.today)
 
@@ -41,4 +47,8 @@ class JobsPage(Page):
         FieldPanel('intro'),
         FieldPanel('start_date'),
         FieldPanel('body', classname="full"),
+    ]
+
+    promote_panels = Page.promote_panels + [
+        MultiFieldPanel(Seo.panels, heading="Extra Seo Settings ..."),
     ]
