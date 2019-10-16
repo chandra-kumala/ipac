@@ -21,7 +21,7 @@
         <meta property="og:title" content="{{ page.seo_title }}" />
         <meta name="description" content="{{ page.search_description }}">
         <meta property="og:description" content="{{ page.search_description }}">
-        <meta property="og:image" content="{% if page.seo_image %}{% image page.seo_image fill-300x300 as img %}{% else %}{% static 'images/logo-square.png' %}{% endif%}">
+        <meta property="og:image" content="{% if page.seo_image %}{{% image page.seo_image fill-300x300 class="img-fluid" alt="Responsive image" %}{% else %}{% static 'images/logo-square.png' %}{% endif%}">
         <meta property="og:url" content="https://www.ipacindo.com/" />
         <meta property="og:type" content="website" />
 
