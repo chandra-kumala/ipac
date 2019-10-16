@@ -26,6 +26,7 @@ a {
 
 a:hover, .dropdown-item:hover {
     color: #ea1b10;
+    text-decoration: none;
 }
 
 h1,
