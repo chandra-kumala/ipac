@@ -10,6 +10,49 @@ from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel, InlinePane
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.images.blocks import ImageChooserBlock
 
+class Dreamer(models.Model):
+    ''' Add DOUBLE streamer field to a page. '''
+    body = StreamField([
+        ('heading', blocks.CharBlock(classname="full title")),
+        ('paragraph', blocks.RichTextBlock()),
+        ('image', ImageChooserBlock()),
+        ('embed', EmbedBlock()),
+    ], null=True, blank=True,)
+    
+    end = StreamField([
+        ('heading', blocks.CharBlock(classname="full title")),
+        ('paragraph', blocks.RichTextBlock()),
+        ('image', ImageChooserBlock()),
+        ('embed', EmbedBlock()),
+    ], null=True, blank=True,)
+
+    panels = [
+        StreamFieldPanel('body'),
+        StreamFieldPanel('end'),
+    ]
+    
+    class Meta:
+        """Abstract Model."""
+
+        abstract = True
+
+class Streamer(models.Model):
+    ''' Add SINGLE streamer field to a page. '''
+    body = StreamField([
+        ('heading', blocks.CharBlock(classname="full title")),
+        ('paragraph', blocks.RichTextBlock()),
+        ('image', ImageChooserBlock()),
+        ('embed', EmbedBlock()),
+    ], null=True, blank=True,)
+
+    panels = [
+        StreamFieldPanel('body'),
+    ]
+    
+    class Meta:
+        """Abstract Model."""
+
+        abstract = True
 
 class Seo(models.Model):
     ''' Add extra seo fields to pages such as icons. '''
