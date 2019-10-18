@@ -13,9 +13,9 @@ from wagtail.images.blocks import ImageChooserBlock
 from ipac.models import Streamer, Seo
 
 
-    parent_page_types = ['wagtailcore.page']
-    subpage_types = ['classes.Classes', 'jobs.Jobs', 'facilities.Facilities', 'home.GenericPage']
 class MainPage(Page, Streamer, Seo):
+    parent_page_types = ['wagtailcore.page', 'home.MainPage']
+    subpage_types = ['section.Index', 'jobs.Jobs', 'facilities.Facilities', 'home.MainPage']
 
     body = StreamField([
         ('heading', blocks.CharBlock(classname="full title")),
