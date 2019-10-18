@@ -34,6 +34,8 @@
         {% block extra_css %}
             {# Override this in templates to add extra stylesheets #}
         {% endblock %}
+        <!-- Icon in browser tab -->
+        <link rel="icon" href="{% static 'images/logo-square.png' %}">
     </head>
 
     <body class="{% block body_class %}{% endblock %}">
