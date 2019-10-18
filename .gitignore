@@ -114,3 +114,4 @@ venv.bak/
 .mypy_cache/
 .gitignore.swp
 ipac/settings/secret.py
+.vscode/settings.json
