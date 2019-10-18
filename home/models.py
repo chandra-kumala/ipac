@@ -13,29 +13,6 @@ from wagtail.images.blocks import ImageChooserBlock
 from ipac.models import Seo
 
 
-class GenericPage(Page, Seo):
-    template = "home/generic_page.html"
-
-    body = StreamField([
-        ('heading', blocks.CharBlock(classname="full title")),
-        ('paragraph', blocks.RichTextBlock()),
-        ('image', ImageChooserBlock()),
-        ('embed', EmbedBlock()),
-    ])
-    
-    content_panels = Page.content_panels + [
-        StreamFieldPanel('body'),
-    ]
-    
-    promote_panels = Page.promote_panels + [
-        MultiFieldPanel(Seo.panels, heading="Extra Seo Settings ..."),
-    ]
-
-    class Meta:
-        verbose_name = "Generic Page"
-        verbose_name_plural = "Generic Pages"
-
-
 class HomePage(Page, Seo):
     parent_page_types = ['wagtailcore.page']
     subpage_types = ['classes.Classes', 'jobs.Jobs', 'facilities.Facilities', 'home.GenericPage']
