@@ -17,12 +17,6 @@ class MainPage(Page, Streamer, Seo):
     parent_page_types = ['wagtailcore.page', 'home.MainPage']
     subpage_types = ['section.Index', 'jobs.Jobs', 'facilities.Facilities', 'home.MainPage']
 
-    body = StreamField([
-        ('heading', blocks.CharBlock(classname="full title")),
-        ('paragraph', blocks.RichTextBlock()),
-        ('image', ImageChooserBlock()),
-        ('embed', EmbedBlock()),
-    ])
 
     content_panels = Page.content_panels + Streamer.panels
      
