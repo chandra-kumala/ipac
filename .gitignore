@@ -2,12 +2,11 @@
 
 
 */migrations/__pycache__/
-*/migrations/0*
-#home/migrations/*
-#jobs/migrations/*
-#classes/migrations/*
-#facilities/migrations/*
-media/
+*/migrations/!__init__.py
+*/migrations/*
+media/*
+!media/*/logo-square*
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -114,3 +113,4 @@ venv.bak/
 # mypy
 .mypy_cache/
 .gitignore.swp
+ipac/settings/secret.py
