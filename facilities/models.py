@@ -11,7 +11,7 @@ from wagtail.search import index
 from ipac.models import Seo
 
 class Facilities(Page, Seo):
-    parent_page_types = ['home.HomePage']
+    parent_page_types = ['home.MainPage']
     subpage_types = ['facilities.FacilitiesPage']
     intro = RichTextField(blank=True)
 
