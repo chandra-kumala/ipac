@@ -15,7 +15,7 @@ from ipac.models import Streamer, Seo
 
 class HomePage(Page, Streamer, Seo):
     parent_page_types = ['wagtailcore.page', 'home.HomePage']
-    subpage_types = ['section.Index', 'jobs.Jobs', 'facilities.Facilities', 'home.HomePage']
+    subpage_types = ['section.Index', 'jobs.Jobs', 'home.HomePage']
 
 
     content_panels = Page.content_panels + Streamer.panels
