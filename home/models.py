@@ -10,12 +10,12 @@ from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel, InlinePane
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.images.blocks import ImageChooserBlock
 
-from ipac.models import Seo
+from ipac.models import Streamer, Seo
 
 
-class HomePage(Page, Seo):
     parent_page_types = ['wagtailcore.page']
     subpage_types = ['classes.Classes', 'jobs.Jobs', 'facilities.Facilities', 'home.GenericPage']
+class MainPage(Page, Streamer, Seo):
 
     body = StreamField([
         ('heading', blocks.CharBlock(classname="full title")),
@@ -24,13 +24,9 @@ class HomePage(Page, Seo):
         ('embed', EmbedBlock()),
     ])
 
-    content_panels = Page.content_panels + [
-        StreamFieldPanel('body'),
-    ]
+    content_panels = Page.content_panels + Streamer.panels
      
-    promote_panels = Page.promote_panels + [
-        MultiFieldPanel(Seo.panels, heading="Extra Seo Settings ..."),
-    ]
+    promote_panels = Page.promote_panels + Seo.panels
 
 
     class Meta:
