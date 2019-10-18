@@ -13,9 +13,9 @@ from wagtail.images.blocks import ImageChooserBlock
 from ipac.models import Streamer, Seo
 
 
-class MainPage(Page, Streamer, Seo):
-    parent_page_types = ['wagtailcore.page', 'home.MainPage']
-    subpage_types = ['section.Index', 'jobs.Jobs', 'facilities.Facilities', 'home.MainPage']
+class HomePage(Page, Streamer, Seo):
+    parent_page_types = ['wagtailcore.page', 'home.HomePage']
+    subpage_types = ['section.Index', 'jobs.Jobs', 'facilities.Facilities', 'home.HomePage']
 
 
     content_panels = Page.content_panels + Streamer.panels

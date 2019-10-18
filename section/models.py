@@ -9,7 +9,7 @@ from ipac.models import Dreamer, Streamer, Seo
 
 
 class Index(Page, Dreamer, Seo):
-    parent_page_types = ['home.MainPage']
+    parent_page_types = ['home.HomePage']
     subpage_types = ['section.Item']
 
     def get_context(self, request):

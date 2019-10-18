@@ -10,7 +10,7 @@ from ipac.models import Seo
 import datetime
 
 class Jobs(Page, Seo):
-    parent_page_types = ['home.MainPage']
+    parent_page_types = ['home.HomePage']
     subpage_types = ['jobs.JobsPage']
     intro = RichTextField(blank=True)
 
