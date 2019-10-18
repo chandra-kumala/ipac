@@ -115,3 +115,4 @@ venv.bak/
 .gitignore.swp
 ipac/settings/secret.py
 .vscode/settings.json
+section/nohup.out
