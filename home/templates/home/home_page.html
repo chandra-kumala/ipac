@@ -39,6 +39,13 @@
         </article>
     </div>
 
+    {% if page.slug != 'home' %}
+        <!-- Items to display on pages other than Home -->
+        <p><a href="{{ page.get_parent.url }}"><i class="icon-home icon2x none"></i><span class="d-none d-md-block">Home Page</span></a></p>
+    {% else %} 
+        <!-- Items to display on the Home page only -->
+        <p></p>
+    {% endif %}
     <div class="fb-share-button" data-href="http://chandrakumala.pythonanywhere.com/" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fchandrakumala.pythonanywhere.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
   </main>
 
