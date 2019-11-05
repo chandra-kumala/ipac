@@ -1,6 +1,5 @@
 # Inspire Performing Arts Centre
-## Medan, Indonesia
-Website based on Django and Wagtail
+## Website based on Django and Wagtail
 
 Currently implemented are the following page types...
 
