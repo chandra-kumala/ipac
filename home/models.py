@@ -18,7 +18,9 @@ class HomePage(Page, Streamer, Seo):
     subpage_types = ['section.Index', 'jobs.Jobs', 'home.HomePage']
 
 
-    content_panels = Page.content_panels + Streamer.panels
+    content_panels = Page.content_panels + Streamer.panels + [
+        InlinePanel('carousel_items', label="Carousel images"),
+    ]
      
     promote_panels = Page.promote_panels + Seo.panels
 
@@ -26,3 +28,16 @@ class HomePage(Page, Streamer, Seo):
     class Meta:
         verbose_name = "Home Page"
         verbose_name_plural = "Home Pages"
+
+
+class Carousel(Orderable):
+    page = ParentalKey(HomePage, on_delete=models.CASCADE, related_name='carousel_items')
+    title = models.CharField(blank=True, max_length=250)
+    caption = models.CharField(blank=True, max_length=250)
+    image = models.ForeignKey('wagtailimages.Image',  null=True, blank=True, on_delete=models.CASCADE, related_name='+')
+
+    panels = [
+        FieldPanel('title'),
+        FieldPanel('caption'),
+        ImageChooserPanel('image'),
+    ]
