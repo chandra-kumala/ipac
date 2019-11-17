@@ -10,12 +10,12 @@ from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel, InlinePane
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.images.blocks import ImageChooserBlock
 
-from ipac.models import Streamer, Seo
+from tools.models import Streamer, Seo
 
 
 class HomePage(Page, Streamer, Seo):
     parent_page_types = ['wagtailcore.page', 'home.HomePage']
-    subpage_types = ['section.Index', 'jobs.Jobs', 'home.HomePage']
+    subpage_types = ['tools.Index', 'home.HomePage']
 
 
     content_panels = Page.content_panels + Streamer.panels + [
