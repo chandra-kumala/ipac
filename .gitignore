@@ -5,6 +5,7 @@
 */migrations/!__init__.py
 */migrations/*
 media/*
+tools/*
 !media/*/logo-square*
 
 
