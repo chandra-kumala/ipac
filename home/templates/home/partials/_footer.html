@@ -1,0 +1,28 @@
+{% load static i18n wagtailcore_tags %}
+
+{% load static i18n wagtailcore_tags wagtailimages_tags wagtailembeds_tags %}
+
+
+
+
+<!-- Footer -->
+<footer class="page-footer font-small blue mt-3 justify-content-center text-center">
+
+  <div class="fb-share-button" data-href="http://chandrakumala.pythonanywhere.com/" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fchandrakumala.pythonanywhere.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+
+  {% if page.slug != 'home' %}
+  <!-- Items to display on pages other than Home -->
+  <p class='mt-5'></p><a href="{{ page.get_parent.url }}"><i class="icon-home icon2x none"></i><span class="d-none d-md-block">Home Page</span></a></p>
+  {% else %} 
+  <!-- Items to display on the Home page only -->
+  <p></p>
+  {% endif %}
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="https://www.caseindo.com/"> IPACindo.com</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
