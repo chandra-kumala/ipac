@@ -40,17 +40,17 @@
     </head>
 
     <body class="{% block body_class %}{% endblock %}">
-            <div id="fb-root"></div>
-            <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v4.0&appId=2309818166009348&autoLogAppEvents=1"></script>
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v4.0&appId=2309818166009348&autoLogAppEvents=1"></script>
         {% wagtailuserbar %}
 
-        {% include 'home/partials/_header.html' %}
+        {% include 'partials/_header.html' %}
 
         <main>
             {% block content %}{% endblock %}
         </main>
 
-        {% include 'home/partials/_footer.html' %}
+        {% include 'partials/_footer.html' %}
 
         {# Global javascript #}
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

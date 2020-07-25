@@ -2,7 +2,7 @@
 {% load static i18n wagtailcore_tags wagtailimages_tags wagtailembeds_tags %}
 
 
-<header class="d-flex flex-row justify-content-between align-items-center px-3" role="banner">
+<header class="d-flex flex-row justify-content-between align-items-center px-3 mt-3" role="banner">
     <div class="">
         <a class='' href="tel:+62-061-661-6765" target="_blank" title="Call Us">
             <i class="icon-smartphone icon3x"></i><span class="d-none d-md-block"></span>
@@ -34,24 +34,8 @@
 </header>
 
 
+{% include 'partials/_nav.html' %}
 
 
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom justify-content-center">
-
-    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon">   
-            <i class="fa fa-caret-square-o-down" style="color:#fff; font-size:28px;"></i>
-        </span>
-    </button>
-    <div class="collapse navbar-collapse ml-auto" id="navbarNavAltMarkup">
-    <div class="navbar-nav mx-auto">
-        {% for menu in menuitems %} {% if page.url != menu.url %}
-        <a class="nav-item nav-link ml-auto" href="{{menu.url}}">{{menu.title}}</a> {% elif page.url == menu.url %}
-        <a class="nav-item nav-link active ml-auto" href="{{menu.url}}">{{menu.title}}</a> {% endif %} 
-        {% if not forloop.last %} <strong class="nav-item text-white my-2 d-none d-lg-block"> : </strong> {% endif %}
-        {% endfor %}
-    </div>
-    </div>
-  </nav>
 
