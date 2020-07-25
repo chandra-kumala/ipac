@@ -116,3 +116,6 @@ venv.bak/
 ipac/settings/secret.py
 .vscode/settings.json
 section/nohup.out
+wagtools
+manage.py
+manage.py
