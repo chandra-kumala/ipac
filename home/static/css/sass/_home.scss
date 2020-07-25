@@ -24,10 +24,13 @@ a {
     color: #308282;
 }
 
-a:hover, .dropdown-item:hover {
+a:hover, .dropdown-item:hover, .navbar-toggler-icon:hover {
     color: #ea1b10;
     text-decoration: none;
 }
+
+
+
 
 h1,
 h2,
@@ -56,7 +59,13 @@ svg:not(:root) {
     align-items: center;
     padding-top: 20px;
     padding-bottom: 10px;
-    border-bottom: 1px solid #e6e6e6;
+}
+
+
+.nav-item {
+    font-family: 'Permanent Marker', cursive;
+        font-weight: 400;
+    font-size: 2em;
 }
 
 .dropdown-menu {
