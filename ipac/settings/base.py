@@ -26,8 +26,6 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
 
-DEBUG = False
-
 # END My Configuration
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
