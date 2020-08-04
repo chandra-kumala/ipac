@@ -1,7 +1,6 @@
 from .base import *
 
-ALLOWED_HOSTS = ['127.0.0.1', 'www.ipacindo.com']
-
+ALLOWED_HOSTS = ['www.ipacindo.com']
 
 DEBUG = False
 
