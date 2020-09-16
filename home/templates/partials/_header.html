@@ -10,7 +10,7 @@
     </div>
     <div class="">
         <a class=' d-none d-sm-block' href="/">
-            <img src="{% static "images/logo.svg" %}" alt="" class="figure-space">
+            <img height='80px' src="{% static "images/logo.svg" %}" alt="" class="figure-space">
         </a>
         <a class="d-block d-sm-none" href="/">
             <img height='50px' src="{% static "images/logo.svg" %}" alt="" class="figure-space">
@@ -32,3 +32,7 @@
         </div>
     </div>
 </header>
+
+{% block nav %}
+    {% include 'partials/_nav.html' %}
+{% endblock %}
