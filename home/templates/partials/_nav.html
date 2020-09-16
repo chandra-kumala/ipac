@@ -9,13 +9,13 @@
         </span>
     </button>
     <div class="collapse navbar-collapse ml-auto" id="navbarNavAltMarkup">
-    <div class="navbar-nav mx-auto">
-        <a href="" class="nav-item nav-link">&#119070;</a>
+    <div class="navbar-nav mx-auto mx-auto">
+        <a href="" class="nav-item nav-link d-none d-lg-block">&#119070;</a>
         {% for menu in menuitems %} {% if page.url != menu.url %}
-        <a class="nav-item nav-link ml-auto" href="{{menu.url}}"> {{menu.title}}</a> {% elif page.url == menu.url %}
-        <a class="nav-item nav-link active ml-auto" href="{{menu.url}}">{{menu.title}}</a> {% endif %} 
+        <a class="nav-item nav-link mx-auto" href="{{menu.url}}"> {{menu.title}}</a> {% elif page.url == menu.url %}
+        <a class="nav-item nav-link active mx-auto" href="{{menu.url}}">{{menu.title}}</a> {% endif %} 
         {% if not forloop.last %} <a class="nav-item nav-link mx-2 d-none d-lg-block"> &#119136; </a> {% endif %}
-        {% if forloop.last %}<a href="#" class="nav-item nav-link">&#119042;</a>{% endif %}
+        {% if forloop.last %}<a href="" class="nav-item nav-link d-none d-lg-block">&#119042;</a>{% endif %}
         {% endfor %}
     </div>
     </div>
