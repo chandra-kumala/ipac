@@ -1,9 +1,4 @@
-{% load static i18n wagtailcore_tags %}
-
-{% load static i18n wagtailcore_tags wagtailimages_tags wagtailembeds_tags %}
-
-
-
+{% load static editable_footer i18n wagtailcore_tags %}
 
 <!-- Footer -->
 <footer class="page-footer font-small blue justify-content-center text-center">
@@ -19,8 +14,8 @@
   {% endif %}
 
   <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2020 Copyright:
-    <a href="https://www.ipacindo.com/"> IPACindo.com</a>
+  <div class="footer-copyright text-center py-3">
+    {% editable_footer_tag %}
   </div>
   <!-- Copyright -->
 
