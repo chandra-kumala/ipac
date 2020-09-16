@@ -1,1 +1,1 @@
-from wagtools.models import HomePage
+from wagtools.models import DefaultHomePage
