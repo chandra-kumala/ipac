@@ -1,3 +1,4 @@
-wagtail>=2.10
-wagtailcodeblock>=1.17.1.0
-python-dotenv>=0.14.0
+wagtail
+wagtailcodeblock
+python-dotenv
+wheel
