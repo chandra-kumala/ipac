@@ -1,0 +1,3 @@
+[submodule "wagtools"]
+	path = wagtools
+	url = https://github.com/inyoka/wagtools.git
